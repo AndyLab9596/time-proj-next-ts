@@ -9,6 +9,7 @@ import ErrorAlert from '../../components/ui/error-alert';
 import { getFilteredEvents } from '../../helpers/api-utils';
 import { IEvent } from '../../types/event-types';
 import useSwR from 'swr';
+import Head from 'next/head';
 
 interface IFilteredEventsPageProps {
   hasError: boolean;
@@ -99,6 +100,10 @@ const FilteredEventsPage = () => {
 
   return (
     <div>
+      <Head>
+        <title>Filtered Events</title>
+        <meta name="description" content={`All events for ${numMonth}/${numYear}.`} />
+      </Head>
       <ResultsTitle date={date} />
       <EventList items={filteredEvents} />
     </div>

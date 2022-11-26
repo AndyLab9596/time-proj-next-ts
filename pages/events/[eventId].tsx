@@ -5,6 +5,7 @@ import { Fragment } from 'react';
 import EventContent from '../../components/event-detail/event-content';
 import EventLogistics from '../../components/event-detail/event-logistics';
 import EventSummary from '../../components/event-detail/event-summary';
+import Comments from '../../components/input/comments';
 import ErrorAlert from '../../components/ui/error-alert';
 import { getEventById } from '../../dummy-data';
 import { getFeaturedEvents } from '../../helpers/api-utils';
@@ -40,6 +41,7 @@ const EventDetailPage: NextPage<IEventDetailPageProps> = ({ selectedEvent }) => 
       <EventContent>
         <p>{event.description}</p>
       </EventContent>
+      <Comments eventId={event.id} />
     </Fragment>
   )
 }
